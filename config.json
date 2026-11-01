@@ -23,7 +23,7 @@
         "security": "none",
         
         "wsSettings": {
-          "path": "/@larel237",
+          "path": "/@larel237/me",
           "heartbeatPeriod": 20
         }
       }
