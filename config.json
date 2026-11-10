@@ -7,14 +7,16 @@
     {
       "listen": "0.0.0.0",
       "port": "env:PORT",
-      "protocol": "trojan",
+      "protocol": "vless",
       
       "settings": {
         "clients": [
           {
-            "password": "@larel237"
+            "id": "@larel237",
+            "flow": ""
           }
-        ]
+        ],
+        "decryption": "none"
       },
       
       "streamSettings": {
@@ -25,13 +27,23 @@
           "path": "/@larel237/moi",
           "heartbeatPeriod": 20
         }
+      },
+
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls", "quic"],
+        "metadataOnly": false,
+        "routeOnly": false
       }
     }
   ],
   
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      }
     }
   ]
 }
